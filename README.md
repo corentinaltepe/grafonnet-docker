@@ -1,5 +1,6 @@
 # grafonnet-docker
-Unofficial dockerfile and image build pipeline for [Grafonnet](https://github.com/grafana/grafonnet-lib). Inspired by [AndrewFarley/grafonnet-lib-dockerhub](https://github.com/AndrewFarley/grafonnet-lib-dockerhub).
+Unofficial [Grafonnet](https://github.com/grafana/grafonnet-lib) dockerfile and image for local and CI pipeline builds.
+Inspired by [AndrewFarley/grafonnet-lib-dockerhub](https://github.com/AndrewFarley/grafonnet-lib-dockerhub).
 
 This image is fit for local builds, Gitlab CI, Azure DevOps CI and probably more.
 
