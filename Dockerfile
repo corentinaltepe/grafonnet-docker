@@ -1,6 +1,8 @@
 # Install required libraries
 FROM golang:1.11.1-alpine AS builder
 
+ARG grafonnet_version
+
 RUN apk add --no-cache git=2.18.4-r0 build-base=0.5-r1 && \
     rm -rf /var/lib/apt/lists/* 
 
@@ -9,7 +11,7 @@ RUN git clone https://github.com/google/jsonnet.git && \
     
 RUN go get github.com/jsonnet-bundler/jsonnet-bundler/cmd/jb && \
     jb init && \
-    jb install https://github.com/grafana/grafonnet-lib/grafonnet@v0.1.0
+    jb install https://github.com/grafana/grafonnet-lib/grafonnet@${grafonnet_version}
 
 # Create image for dashboard generation
 FROM node:10-alpine
