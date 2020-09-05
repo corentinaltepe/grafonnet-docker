@@ -16,7 +16,6 @@ FROM node:10-alpine
 LABEL maintainer="corentin.altepe@gmail.com"
 
 RUN apk add --no-cache libstdc++ ca-certificates && \
-
   # Specific for Azure DevOps pipelines.
   # See: https://docs.microsoft.com/en-us/azure/devops/pipelines/process/container-phases?view=azure-devops#add-requirements
   apk add bash sudo shadow
