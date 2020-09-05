@@ -10,10 +10,9 @@ Docker images are published to DockerHub and Github registries.
 - [corentinaltepe/grafonnet](https://hub.docker.com/r/corentinaltepe/grafonnet)
 - ghcr.io/corentinaltepe/grafonnet
 
-Tags follow [Grafonnet](https://github.com/grafana/grafonnet-lib) releases. Available tags:
-- latest: Grafonnet's master head
-- 0.1.0
-- 0.0.1
+Tags follow [Grafonnet](https://github.com/grafana/grafonnet-lib) releases. Find available tags
+[here](https://github.com/users/corentinaltepe/packages/container/grafonnet/versions)
+and [here](https://hub.docker.com/r/corentinaltepe/grafonnet/tags).
 
 ## How To
 
