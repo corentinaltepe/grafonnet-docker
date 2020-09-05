@@ -25,7 +25,8 @@ jobs:
           echo "${{ secrets.CR_PAT }}" | docker login https://ghcr.io -u ${{ github.actor }} --password-stdin
           
           # Change all uppercase to lowercase
-          docker push ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME:latest
+          docker tag $IMAGE_NAME:latest ghcr.io/corentinaltepe/$IMAGE_NAME:latest
+          docker push ghcr.io/corentinaltepe/$IMAGE_NAME:latest
 
       - name: Push image to DockerHub Container Registry
         run: |
@@ -33,4 +34,5 @@ jobs:
           echo "${{ secrets.CR_PAT }}" | docker login -u corentinaltepe --password-stdin
           
           # Change all uppercase to lowercase
+          docker tag $IMAGE_NAME:latest corentinaltepe/$IMAGE_NAME:latest
           docker push corentinaltepe/$IMAGE_NAME:latest
