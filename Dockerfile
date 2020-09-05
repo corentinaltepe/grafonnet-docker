@@ -1,5 +1,3 @@
-LABEL maintainer="corentin.altepe@gmail.com"
-
 # Install required libraries
 FROM golang:1.11.1-alpine AS builder
 
@@ -15,6 +13,7 @@ RUN go get github.com/jsonnet-bundler/jsonnet-bundler/cmd/jb && \
 
 # Create image for dashboard generation
 FROM node:10-alpine
+LABEL maintainer="corentin.altepe@gmail.com"
 
 RUN apk add --no-cache libstdc++ ca-certificates && \
 
