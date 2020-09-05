@@ -31,7 +31,7 @@ jobs:
       - name: Push image to DockerHub Container Registry
         run: |
           # Log into Dockerhub
-          echo "${{ secrets.CR_PAT }}" | docker login -u corentinaltepe --password-stdin
+          echo "${{ secrets.DOCKER_HUB_RW }}" | docker login -u corentinaltepe --password-stdin
           
           # Change all uppercase to lowercase
           docker tag $IMAGE_NAME:latest corentinaltepe/$IMAGE_NAME:latest
