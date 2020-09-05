@@ -16,17 +16,17 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag $IMAGE_NAME:latest
+      # - name: Build the Docker image
+      #   run: docker build . --file Dockerfile --tag $IMAGE_NAME:latest
 
-      - name: Push image to GitHub Container Registry
-        run: |
-          # Log into GitHub Container Registry
-          echo "${{ secrets.CR_PAT }}" | docker login https://ghcr.io -u ${{ github.actor }} --password-stdin
+      # - name: Push image to GitHub Container Registry
+      #   run: |
+      #     # Log into GitHub Container Registry
+      #     echo "${{ secrets.CR_PAT }}" | docker login https://ghcr.io -u ${{ github.actor }} --password-stdin
           
-          # Change all uppercase to lowercase
-          docker tag $IMAGE_NAME:latest ghcr.io/corentinaltepe/$IMAGE_NAME:latest
-          docker push ghcr.io/corentinaltepe/$IMAGE_NAME:latest
+      #     # Change all uppercase to lowercase
+      #     docker tag $IMAGE_NAME:latest ghcr.io/corentinaltepe/$IMAGE_NAME:latest
+      #     docker push ghcr.io/corentinaltepe/$IMAGE_NAME:latest
 
       - name: Push image to DockerHub Container Registry
         run: |
