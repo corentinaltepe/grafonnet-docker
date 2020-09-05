@@ -7,8 +7,8 @@ This image is fit for local builds, Gitlab CI, Azure DevOps CI and probably more
 ## Registries and Tags
 
 Docker images are published to DockerHub and Github registries.
-- corentinaltepe/grafonnet : DockerHub
-- ghcr.io/corentinaltepe/grafonnet : Github
+- [corentinaltepe/grafonnet](https://hub.docker.com/r/corentinaltepe/grafonnet)
+- ghcr.io/corentinaltepe/grafonnet
 
 Tags follow [Grafonnet](https://github.com/grafana/grafonnet-lib) releases. Available tags:
 - latest: Grafonnet's master head
