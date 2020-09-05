@@ -43,3 +43,23 @@ echo , "overwrite": true} >> %~dp0myfile.json
 ::: Replace admin:admin with your credentials or add authentication bearer in HTTP headers
 curl -X POST -H "Content-Type: application/json" -d @%~dp0myfile.json "http://admin:admin@localhost:3000/api/dashboards/db"
 ```
+
+### CI Jobs
+#### Azure DevOps
+```yaml
+- job: Build_Grafana_Dashboards
+  container:
+    image: corentinaltepe/grafonnet:0.1.0
+  pool:
+    vmImage: "ubuntu-latest"
+  steps:
+    # Build every .jsonnet file into a .json dashboard 
+    # and place them in grafonnet-out/ directory
+    - script: >
+        mkdir grafonnet-out
+
+        for file in Scripts/Metrics/grafonnet/*.jsonnet ; do 
+          name=$(basename $file)
+          jsonnet $file > grafonnet-out/grafana.${name%.jsonnet}.json
+        done
+```
