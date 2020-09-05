@@ -21,12 +21,12 @@ To build a `mysourcefile.jsonnet` file into a `mysourcefile.json` dasbhoard for 
 
 On Windows, do a `cd` to your source file:
 ```batch
-docker run --rm -v %~dp0:/here corentinaltepe/grafonnet:latest jsonnet /here/mysourcefile.jsonnet >> %~dp0%1.json
+docker run --rm -v %~dp0:/here corentinaltepe/grafonnet:latest jsonnet /here/mysourcefile.jsonnet >> %~dp0mysourcefile.json
 ```
 
 On Linux, do a `cd` to your source file:
 ```bash
-docker run --rm -v $(pwd):/here corentinaltepe/grafonnet:latest jsonnet /here/mysourcefile.jsonnet >> %~dp0%1.json
+docker run --rm -v $(pwd):/here corentinaltepe/grafonnet:latest jsonnet /here/mysourcefile.jsonnet >> $(pwd)/mysourcefile.json
 ```
 
 ### Automatically Build and Load to Grafana
