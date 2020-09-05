@@ -6,7 +6,7 @@ This image is fit for local builds, Gitlab CI, Azure DevOps CI and probably more
 
 ## Registries and Tags
 
-Docker images are published to DockerHub and Github registries.
+Docker images are published to DockerHub and GitHub registries.
 - [corentinaltepe/grafonnet](https://hub.docker.com/r/corentinaltepe/grafonnet)
 - ghcr.io/corentinaltepe/grafonnet
 
