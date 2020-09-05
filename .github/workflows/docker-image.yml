@@ -18,8 +18,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      # - name: Build the Docker image
-      #   run: docker build . --file Dockerfile --tag $IMAGE_NAME:latest
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --tag $IMAGE_NAME:latest
 
       - name: Push image to GitHub Container Registry
         run: |
