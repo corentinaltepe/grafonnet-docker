@@ -9,7 +9,7 @@ RUN git clone https://github.com/google/jsonnet.git && \
     
 RUN go get github.com/jsonnet-bundler/jsonnet-bundler/cmd/jb && \
     jb init && \
-    jb install https://github.com/grafana/grafonnet-lib/grafonnet@0.1.0
+    jb install https://github.com/grafana/grafonnet-lib/grafonnet@v0.1.0
 
 # Create image for dashboard generation
 FROM node:10-alpine
