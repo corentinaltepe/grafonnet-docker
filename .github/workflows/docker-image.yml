@@ -2,7 +2,11 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ master, test-0.1.0 ]
+    branches: [ master ]
+  
+  # Rebuild master every sunday at 2 AM
+  schedule:
+    - cron: "0 2 * * 0"
 
 
 env:
