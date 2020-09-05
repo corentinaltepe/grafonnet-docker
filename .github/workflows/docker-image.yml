@@ -36,3 +36,10 @@ jobs:
           # Change all uppercase to lowercase
           docker tag $IMAGE_NAME:latest corentinaltepe/$IMAGE_NAME:latest
           docker push corentinaltepe/$IMAGE_NAME:latest
+
+      - name: Push Readme to Docker Hub
+        uses: peter-evans/dockerhub-description@v2
+        env:
+          DOCKERHUB_USERNAME: corentinaltepe
+          DOCKERHUB_PASSWORD: ${{ secrets.DOCKER_HUB_RW }}
+          DOCKERHUB_REPOSITORY: corentinaltepe/grafana
