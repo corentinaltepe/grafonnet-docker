@@ -19,8 +19,6 @@ jobs:
       - name: Build the Docker image
         run: |
           docker build . --file Dockerfile --tag $IMAGE_NAME:latest --build-arg grafonnet_version=master
-          docker build . --file Dockerfile --tag $IMAGE_NAME:0.1.0 --build-arg grafonnet_version=v0.1.0
-          docker build . --file Dockerfile --tag $IMAGE_NAME:0.0.1 --build-arg grafonnet_version=v0.0.1
 
       - name: Push image to GitHub Container Registry
         run: |
@@ -30,10 +28,6 @@ jobs:
           # Change all uppercase to lowercase
           docker tag $IMAGE_NAME:latest ghcr.io/corentinaltepe/$IMAGE_NAME:latest
           docker push ghcr.io/corentinaltepe/$IMAGE_NAME:latest
-          docker tag $IMAGE_NAME:0.1.0 ghcr.io/corentinaltepe/$IMAGE_NAME:0.1.0
-          docker push ghcr.io/corentinaltepe/$IMAGE_NAME:0.1.0
-          docker tag $IMAGE_NAME:0.0.1 ghcr.io/corentinaltepe/$IMAGE_NAME:0.0.1
-          docker push ghcr.io/corentinaltepe/$IMAGE_NAME:0.0.1
 
       - name: Push image to DockerHub Container Registry
         run: |
@@ -43,10 +37,6 @@ jobs:
           # Change all uppercase to lowercase
           docker tag $IMAGE_NAME:latest corentinaltepe/$IMAGE_NAME:latest
           docker push corentinaltepe/$IMAGE_NAME:latest
-          docker tag $IMAGE_NAME:0.1.0 corentinaltepe/$IMAGE_NAME:0.1.0
-          docker push corentinaltepe/$IMAGE_NAME:0.1.0
-          docker tag $IMAGE_NAME:0.0.1 corentinaltepe/$IMAGE_NAME:0.0.1
-          docker push corentinaltepe/$IMAGE_NAME:0.0.1
 
       - name: Push Readme to Docker Hub
         uses: peter-evans/dockerhub-description@v2
