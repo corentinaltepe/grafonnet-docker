@@ -13,7 +13,6 @@ env:
 jobs:
 
   build-push:
-    needs: build
     runs-on: ubuntu-latest
 
     steps:
