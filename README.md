@@ -5,5 +5,6 @@ This image is fit for local builds, Gitlab CI, Azure DevOps CI and probably more
 
 ## How To
 TODO
+Test
 
 
