@@ -4,6 +4,8 @@ Inspired by [AndrewFarley/grafonnet-lib-dockerhub](https://github.com/AndrewFarl
 
 This image is fit for local builds, Gitlab CI, Azure DevOps CI and probably more.
 
+Source code [here](https://github.com/corentinaltepe/grafonnet-docker).
+
 ## Registries and Tags
 
 Docker images are published to DockerHub and GitHub registries.
