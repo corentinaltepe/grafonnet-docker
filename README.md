@@ -34,13 +34,13 @@ The following script builds a file for Grafana's API and then pushes it to Grafa
 Replace `%~dp0` with `$(pwd)` for Linux.
 ```batch
 ::: Build the dashboard *.jsonnet to *.json
-echo { "dashboard": > %~dp0myfile.json
-docker run --rm -v %~dp0:/here corentinaltepe/grafonnet:latest jsonnet /here/myfile.jsonnet >> %~dp0myfile.json
-echo , "overwrite": true} >> %~dp0myfile.json
+echo { "dashboard": > %~dp0mysourcefile.json
+docker run --rm -v %~dp0:/here corentinaltepe/grafonnet:latest jsonnet /here/myfile.jsonnet >> %~dp0mysourcefile.json
+echo , "overwrite": true} >> %~dp0mysourcefile.json
 
 ::: Load to Grafana
 ::: Replace admin:admin with your credentials or add authentication bearer in HTTP headers
-curl -X POST -H "Content-Type: application/json" -d @%~dp0myfile.json "http://admin:admin@localhost:3000/api/dashboards/db"
+curl -X POST -H "Content-Type: application/json" -d @%~dp0mysourcefile.json "http://admin:admin@localhost:3000/api/dashboards/db"
 ```
 
 ### CI Jobs
@@ -57,7 +57,7 @@ curl -X POST -H "Content-Type: application/json" -d @%~dp0myfile.json "http://ad
     - script: >
         mkdir grafonnet-out
 
-        for file in Scripts/Metrics/grafonnet/*.jsonnet ; do 
+        for file in dashboards/*.jsonnet ; do 
           name=$(basename $file)
           jsonnet $file > grafonnet-out/grafana.${name%.jsonnet}.json
         done
